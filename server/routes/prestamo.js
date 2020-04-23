@@ -5,7 +5,7 @@ const Prestamo = require('../models/prestamo');
 const { verificaToken } = require('../middleware/autenticacion');
 
 
-app.get('/prestamo', [verificaToken], (req, res) => {
+app.get('/prestamo', (req, res) => {
     Prestamo.find()
         .exec((err, prestamos) => {
             if (err) {
